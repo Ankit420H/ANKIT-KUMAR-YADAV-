@@ -1,0 +1,102 @@
+import datetime
+t_date=datetime.date.today()
+t_time=datetime.datetime.now()
+
+shop=[{"id": 1001, "Name": "HP-AE12", "Available": 100, "Price": 25000, "Original_Price": 24000},
+            {"id": 1002, "Name": "DELL", "Available": 100, "Price": 35000, "Original_Price": 34000},
+            {"id": 1003, "Name": "ASUS", "Available": 100, "Price": 28000, "Original_Price": 27000},
+            {"id": 1004, "Name": "APPLE", "Available": 100, "Price": 60000, "Original_Price": 59000},
+            {"id": 1005, "Name": "ACER", "Available": 100, "Price": 24000, "Original_Price": 23000},
+            {"id": 1006, "Name": "SAM", "Available": 100, "Price": 35000, "Original_Price": 34000},
+            {"id": 1007, "Name": "OPPO", "Available": 100, "Price": 15000, "Original_Price": 14000},
+            {"id": 1008, "Name": "XAOMI", "Available": 100, "Price": 45000, "Original_Price": 44000},
+            {"id": 1009, "Name": "HUAWEI", "Available": 100, "Price": 20000, "Original_Price": 19000},
+            {"id": 1010, "Name": "VIVO", "Available": 100, "Price": 12000, "Original_Price": 11000}]
+
+emp=[{"id": 1001, "Name": "ANKIT", "Department": MD, "Phone_no": 1234567890, "salary": 24000,"password": 1234},
+            {"id": 1002, "Name": "AVI", "Department": IT, "Phone_no": 1234567890, "salary": 34000,"password": 1234},
+            {"id": 1003, "Name": "AMAN", "Department": IT, "Phone_no": 1234567890, "salary": 27000,"password": 1234},
+            {"id": 1004, "Name": "SHIV", "Department": IT, "Phone_no": 1234567890, "salary": 59000,"password": 1234},
+            {"id": 1005, "Name": "RITIK", "Department": IT, "Phone_no": 1234567890, "salary": 23000,"password": 1234},
+            {"id": 1006, "Name": "ANUP", "Department": IT, "Phone_no": 1234567890, "salary": 34000,"password": 1234},
+            {"id": 1007, "Name": "MANAN", "Department": IT, "Phone_no": 1234567890, "salary": 14000,"password": 1234},
+            {"id": 1008, "Name": "JASSI", "Department": HR, "Phone_no": 1234567890, "salary": 44000,"password": 1234},
+            {"id": 1009, "Name": "MANNU", "Department": HR, "Phone_no": 1234567890, "salary": 19000,"password": 1234},
+            {"id": 1010, "Name": "ASII", "Department": HR, "Phone_no": 1234567890, "salary": 11000,"password": 1234}]
+
+password=['1234','1234','1234']
+s1=shop
+l=[]
+order=""
+def menu():
+    c = '1'
+    while(c=='1'):
+        print("*"*134)
+        print(" ")
+        print("E-COMMERENCE APPLICATION".center(134))
+        print(" ")
+        print(" "*9,"DATE:",t_date.day,"/",t_date.month,"/",t_date.year,"                                                                                TIME:",t_time.hour ,":",t_time.minute)
+        print(" ")
+        print("*"*134)
+        print(" ")
+        print(" "*62,"1.ADMINISTRATOR")
+        print(" "*62,"2.EMPLOYEE")
+        print(" "*62,"3.CUSTOMER")
+        print(" "*62,"4.QUIT")
+        print(" ")
+        print(" ")
+        choice=input("                                                            ENTER YOUR CHOICE :")
+        print(" ")
+        #####  ADMIN  #####
+        if choice=='1':
+            for i in range(3):
+                op = input("                                                            ENTER PIN PASSWORD :")
+                if(op==password[0]):
+                    print("CORRECT".center(134))
+                    admin()
+                    break
+                else:
+                    j=2
+                    print("                                  INCORRECT PASSWORD",j-i,"CHANCES ARE LEFT ")
+                    if(j-i==0):
+                        print("TRY AGAIN LATER".center(134))
+                        break
+            else:
+                break
+        #####  EMPLOYEE  #####
+        elif choice=='2':
+            i=0
+            n = input("                                                            ENTER YOUR ID :")
+            if n in emp :
+                for i in range(3):
+                op = int(input("                                                            ENTER PIN PASSWORD :"))
+                if(op==x['emp']):
+                    print("CORRECT".center(134))
+                    employee()
+                    break
+                else:
+                    j=2
+                    print("                                  INCORRECT PASSWORD ",j-i," CHANCES ARE LEFT ")
+                    if(j-i==0):
+                        print("TRY AGAIN LATER".center(134))
+                        break      
+        ##### CUSTOMER  #####
+        elif choice=='3':
+            i=0
+            n = input("                                                            ENTER YOUR NAME :")
+            for i in range(3):
+                op = int(input("                                                            ENTER PIN PASSWORD :"))
+                if(op==password():
+                    print("CORRECT".center(134))
+                    customer()
+                    break
+                else:
+                    j=2
+                    print("                                  INCORRECT PASSWORD ",j-i," CHANCES ARE LEFT ")
+                    if(j-i==0):
+                        print("TRY AGAIN LATER".center(134))
+                        break
+    else:
+        quit()
+        break
+menu()
